@@ -18,11 +18,10 @@
         <?php require 'inc/menu.php'; ?>
         <div class="content-fluid">
             <?php
-            print_r( $_GET );
-            if( ! isset( $_GET['location'] ) ) {
+            if( ! isset( $_GET['url'] ) ) {
                 $location = "dashboard";
             } else {
-                $location = filter_var( $_GET['location'] , FILTER_UNSAFE_RAW );
+                $location = filter_var( $_GET['url'] , FILTER_UNSAFE_RAW );
             }
             echo "Going to require " . $location . ".php";
             ?>
