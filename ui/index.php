@@ -19,7 +19,7 @@ require_once 'inc/functions.php';
         <?php require 'inc/menu.php'; ?>
         <div class="content-fluid">
             <?php
-            if( ! isset( $_GET['url'] ) ) {
+            if( empty( $_GET['url'] ) ) {
                 $location = "dashboard";
             } else {
                 $location = filter_var( $_GET['url'] , FILTER_UNSAFE_RAW );
