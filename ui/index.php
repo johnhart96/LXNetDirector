@@ -1,6 +1,6 @@
 <?php
 /*
-*Project: LXNetDirector
+* Project: LXNetDirector
 * Author: johnhart96
 * Version 1
 * Licence: Apache 2.0
@@ -15,8 +15,8 @@
         <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
     </head>
     <body>
-        <div class="container">
-            <h1>Hello</h1>
+        <div class="container-fluid">
+            <?php require 'inc/menu.php'; ?>
         </div>
     </body>
 </html>
