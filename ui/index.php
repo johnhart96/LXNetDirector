@@ -12,8 +12,8 @@ require_once 'inc/functions.php';
     <head>
         <title>LXNetDirector</title>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo "http://" . $_SERVER['SERVER_ADDR'] ?>/vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <script src="<?php echo "http://" . $_SERVER['SERVER_ADDR'] ?>/vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <link href="<?php echo base( "vendor/twbs/bootstrap/dist/css/bootstrap.min.css" ) ?>" rel="stylesheet" type="text/css" />
+        <script src="<?php echo base( "vendor/twbs/bootstrap/dist/js/bootstrap.min.js" ) ?>" type="text/javascript"></script>
     </head>
     <body>
         <?php require 'inc/menu.php'; ?>

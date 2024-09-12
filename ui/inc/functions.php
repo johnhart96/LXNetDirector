@@ -1,6 +1,5 @@
 <?php
-function base() {
-    return $_SERVER['SERVER_NAME'];
+function base( $l = NULL ) {
+    return $_SERVER['SERVER_NAME'] . "/" . $l;
 }
-die( base() );
 ?>
