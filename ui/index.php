@@ -16,5 +16,15 @@
     </head>
     <body>
         <?php require 'inc/menu.php'; ?>
+        <div class="content-fluid">
+            <?php
+            if( ! empty( $_GET['location'] ) ) {
+                $location = "dashboard";
+            } else {
+                $location = filter_var( $_GET['location'] , FILTER_UNSAFE_RAW );
+            }
+            echo "Going to require " . $location . ".php";
+            ?>
+        </div>
     </body>
 </html>
