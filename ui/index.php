@@ -6,6 +6,7 @@
 * Licence: Apache 2.0
 * Repo: https://github.com/johnhart96/LXNetDirector
 */
+require_once 'inc/functions.php';
 ?>
 <html>
     <head>
