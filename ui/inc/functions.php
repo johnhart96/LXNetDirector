@@ -10,7 +10,7 @@ function menu_item( $link , $text ) {
     } else {
         $active = "";
     }
-    return '<li class="nav-item"><a class="nav-link ' . $active . '" aria-current="page" href="/' . $link . '">' . $text . '</a></li>';
+    echo '<li class="nav-item"><a class="nav-link ' . $active . '" aria-current="page" href="/' . $link . '">' . $text . '</a></li>';
 }
 
 ?>

@@ -7,7 +7,8 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <?php
-        echo menu_item( "dashboard" , "Dashboard" );
+        menu_item( "dashboard" , "Dashboard" );
+        menu_item( "dhcp" , "DHCP" );
         ?>
       </ul>
     </div>
