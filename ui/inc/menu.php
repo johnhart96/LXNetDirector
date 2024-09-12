@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">LXNetDirector</a>
+    <a class="navbar-brand" href="/">LXNetDirector</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,6 +9,9 @@
         <?php
         menu_item( "dashboard" , "Dashboard" );
         menu_item( "dhcp" , "DHCP" );
+        menu_item( "dns" , "DNS" );
+        menu_item( "ntp" , "NTP" );
+        menu_item( "shares" , "Shares" );
         ?>
       </ul>
     </div>
