@@ -1,5 +1,5 @@
 <?php
 function base( $l = NULL ) {
-    return $_SERVER['SERVER_NAME'] . "/" . $l;
+    return "http://" . $_SERVER['SERVER_NAME'] . "/" . $l;
 }
 ?>
