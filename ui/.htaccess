@@ -5,4 +5,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/vendor/.*$
 # Rewrite requests of the form /x/y to /index.php?location=x&id=y
-RewriteRule ^([^/]+)/([^/]+)$ /index.php?location=$1&id=$2 [QSA,L]
+RewriteRule ^/?([^/]+)/([^/]+)$ /index.php?location=$1&id=$2 [QSA,L]
