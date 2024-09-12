@@ -15,8 +15,6 @@
         <script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
     </head>
     <body>
-        <div class="container-fluid">
-            <?php require 'inc/menu.php'; ?>
-        </div>
+        <?php require 'inc/menu.php'; ?>
     </body>
 </html>
