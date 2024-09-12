@@ -18,6 +18,7 @@
         <?php require 'inc/menu.php'; ?>
         <div class="content-fluid">
             <?php
+            print_r( $_GET );
             if( ! isset( $_GET['location'] ) ) {
                 $location = "dashboard";
             } else {
