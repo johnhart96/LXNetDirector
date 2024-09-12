@@ -3,6 +3,6 @@ RewriteEngine On
 # Don't rewrite requests for existing files or directories
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/vendor/
+RewriteCond %{REQUEST_URI} !^/vendor/.*$
 # Rewrite requests of the form /x/y to /index.php?location=x&id=y
 RewriteRule ^([^/]+)/([^/]+)$ /index.php?location=$1&id=$2 [QSA,L]
