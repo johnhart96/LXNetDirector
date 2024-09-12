@@ -1,12 +1,9 @@
-RewriteEngine On
-
-# Don't rewrite requests for existing files, directories, or anything inside vendor/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/vendor/.*
-
-# Ensure that the rule applies regardless of subdirectories
-RewriteCond %{REQUEST_URI} !^/index.php
-
-# Rewrite requests for /x/y to /index.php?location=x&id=y
-RewriteRule ^/?([^/]+)/([^/]+)$ /index.php?location=$1&id=$2 [QSA,L]
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.*)/(.*)$ index.php?url=$1&id=$2 [QSA,L]
+  RewriteCond %{REQUEST_URI} !^/vendor/
+  RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
