@@ -7,7 +7,7 @@
     <div class="col">
         <h2>Health</h2>
         <?php
-        $memory = shell( "free -h" );
+        $memory = shell_exec( "free -h" );
         echo $memory;
         ?>
     </div>
