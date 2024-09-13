@@ -15,7 +15,7 @@
         ?>
       </ul>
       <form class="form-inline" style="margin: 0px;">
-        <button class="btn btn-outline-secondary" onclick="window.location='/settings'">Settings</button>
+        <a class="btn btn-outline-secondary" href="/settings">Settings</a>
       </form>
     </div>
   </div>
