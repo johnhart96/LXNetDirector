@@ -54,6 +54,6 @@ function write_setting( $setting , $value ) {
         $write = $db->prepare( "UPDATE settings SET setting_value =:setting_value WHERE setting =:setting" );
         watchdog( "Updating setting `" . $setting . "` with the value `" . $value . "`" );
     }
-    $write->execute( [ ':setting' => $setting , ':setting_value' => $setting_value ] );
+    $write->execute( [ ':setting' => $setting , ':setting_value' => $value ] );
 }
 ?>
