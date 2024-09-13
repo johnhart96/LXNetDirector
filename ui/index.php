@@ -8,6 +8,7 @@
 */
 require_once 'inc/functions.php';
 $db = config_init();
+watchdog( "User `" . user() . "` requested " . $_SERVER['REQUEST_URL'] );
 ?>
 <html>
     <head>

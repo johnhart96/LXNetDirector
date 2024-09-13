@@ -26,4 +26,7 @@ function watchdog( $entry , $device = "LXNetDirector" , $mode = "info" ) {
     $db->execute( [ ':device' => $device , ':mode' => $mode , ':entryLog' => $entry ] );
     $db->close();
 }
+function user() {
+    return $_SERVER['PHP_AUTH_USER'];
+}
 ?>
