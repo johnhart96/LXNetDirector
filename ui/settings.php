@@ -5,12 +5,6 @@
 </div>
 <div class="row">
     <div class="col">
-        <table width="100%">
-            <tr>
-                <td>&nbsp;</td>
-                <td width="1"><button type="submit" class="btn btn-success">Submit</button></td>
-            </tr>
-        </table>
         <?php
         if( isset( $_POST['submit'] ) ) {
             echo "<pre>";
@@ -26,6 +20,12 @@
 <div class="row">
     <div class="col">
         <form method="post">
+            <table width="100%">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td width="1"><button type="submit" class="btn btn-success">Submit</button></td>
+                </tr>
+            </table>
             <h2>Site info:</h2>
 
             <div class="form-group">
