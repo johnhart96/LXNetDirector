@@ -8,6 +8,7 @@
         <h2>Health</h2>
         <?php
         $memory = shell_exec( "free -h" );
+        $memory = str_replace( "total used free shared buff/cache available " , "" , $memory );
         echo $memory;
         ?>
     </div>
