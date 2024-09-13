@@ -3,7 +3,25 @@
         <h1>Settings</h1>
     </div>
 </div>
-<div class="row">&nbsp;</div>
+<div class="row">
+    <div class="col">
+        <table>
+            <tr>
+                <td>&nbsp;</td>
+                <td width="1"><button type="submit" class="btn btn-success">Submit</button></td>
+            </tr>
+        </table>
+        <?php
+        if( isset( $_POST['submit'] ) ) {
+            echo "<pre>";
+            print_r( $_POST );
+            echo "</pre>";
+        } else {
+            echo "&nbsp;";
+        }
+        ?>
+    </div>
+</div>
 
 <div class="row">
     <div class="col">
