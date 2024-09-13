@@ -1,4 +1,5 @@
 <?php
+define( "CONFIG_PATH" , "/usr/local/lx_network/shares/config/LXNetDirector.db" );
 function base( $l = NULL ) {
     return "http://" . $_SERVER['SERVER_NAME'] . "/" . $l;
 }
@@ -55,5 +56,9 @@ function write_setting( $setting , $value ) {
         watchdog( "Updating setting `" . $setting . "` with the value `" . $value . "`" );
     }
     $write->execute( [ ':setting' => $setting , ':setting_value' => $value ] );
+}
+// Create db if do not exist
+if( ! file_exists( CONFIG_PATH ) ) {
+    $create = new SQLite3( CONFIG_PATH );
 }
 ?>
