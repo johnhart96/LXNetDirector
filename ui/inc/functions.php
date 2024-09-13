@@ -28,4 +28,32 @@ function watchdog( $entry , $mode = "info" , $device = "LXNetDirector" ) {
 function user() {
     return $_SERVER['PHP_AUTH_USER'];
 }
+function read_setting( $setting ) {
+    $db = config_init();
+    $get = $db->prepare( "SELECT * FROM settings WHERE setting =:setting LIMIT 1" );
+    $get->execute( [ ':setting' => $setting ] );
+    while( $row = $get->fetch( PDO::FETCH_ASSOC ) ) {
+        return $row['setting_value'];
+    }
+}
+function write_setting( $setting , $value ) {
+    $db = config_init();
+    // Check if setting exists
+    $check = $db->prepare( "SELECT * FROM settings WHERE setting =:setting LIMIT 1" );
+    $check->execute( [ ':setting' => $setting ] );
+    $entries = 0;
+    while( $row = $check->fetch( PDO::FETCH_ASSOC ) ) {
+        $entries++;
+    }
+    if( $entries == 0 ) {
+        // No entries, insert
+        $write = $db->prepare( "INSERT INTO settings (setting,setting_value) VALUES(:setting,:setting_value)" );
+        watchdog( "Adding setting `" . $setting . "` with the value `" . $value . "`" );
+    } else {
+        // Entries found, update
+        $write = $db->prepare( "UPDATE settings SET setting_value =:setting_value WHERE setting =:setting" );
+        watchdog( "Updating setting `" . $setting . "` with the value `" . $value . "`" );
+    }
+    $write->execute( [ ':setting' => $setting , ':setting_value' => $setting_value ] );
+}
 ?>
