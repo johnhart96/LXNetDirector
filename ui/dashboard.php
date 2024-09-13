@@ -5,6 +5,7 @@
 </div>
 <div class="row">
     <div class="col">
+        <p><?php echo read_setting( "dashboard_memo" ); ?></p>
         <p>&nbsp;</p>
     </div>
 </div>
