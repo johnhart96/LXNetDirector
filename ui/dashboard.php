@@ -35,6 +35,10 @@
                             <th width="25%">Telephone number:</th>
                             <td><?php echo read_setting( "site_telephone" ); ?></td>
                         </tr>
+                        <tr>
+                            <th width="25%">Email:</th>
+                            <td><?php echo read_setting( "site_email" ); ?></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
