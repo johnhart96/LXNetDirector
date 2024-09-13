@@ -26,6 +26,9 @@ $db = config_init();
                 $location = filter_var( $_GET['url'] , FILTER_UNSAFE_RAW );
             }
             echo "Going to require " . $location . ".php";
+            echo "<pre>";
+            print_r( $_SERVER );
+            echo "</pre>";
             ?>
         </div>
     </body>
