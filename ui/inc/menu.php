@@ -8,9 +8,9 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <?php
         menu_item( "dashboard" , "Dashboard" );
-        menu_item( "dhcp" , "DHCP" );
-        menu_item( "dns" , "DNS" );
-        menu_item( "ntp" , "NTP" );
+        menu_item( "dhcp" , "Address" );
+        menu_item( "dns" , "Names" );
+        menu_item( "ntp" , "Time" );
         menu_item( "shares" , "Shares" );
         ?>
       </ul>
