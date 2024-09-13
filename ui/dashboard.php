@@ -72,3 +72,35 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header"><strong>Latest logs:</strong></div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Date/time</th>
+                            <th>Device</th>
+                            <th>Level</th>
+                            <th>Entry</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $getLogs = $db->query( "SELECT * FROM logs ORDER BY id DESC LIMIT 50" );
+                        while( $row = $getLogs->fetch( PDO::FETCH_ASSOC ) ) {
+                            echo "<tr>";
+                            echo "<td>" . date( "Y-m-d H:i:s" , strtotime( $row['stamp'] ) ) . "</td>";
+                            echo "<td>" . $row['device'] . "</td>";
+                            echo "<td>" . $row['mode'] . "</td>";
+                            echo "<td>" . $row['entry'] . "</td>";
+                            echo "</tr>";
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
