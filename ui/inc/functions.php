@@ -24,7 +24,6 @@ function watchdog( $entry , $device = "LXNetDirector" , $mode = "info" ) {
     $db = config_init();
     $watchdog = $db->prepare( "INSERT INTO logs (device,mode,entryLog) VALUES(:device,:mode,:entryLog)" );
     $watchdog->execute( [ ':device' => $device , ':mode' => $mode , ':entryLog' => $entry ] );
-    $db->close();
 }
 function user() {
     return $_SERVER['PHP_AUTH_USER'];
