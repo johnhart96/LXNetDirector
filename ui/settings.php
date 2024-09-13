@@ -10,6 +10,12 @@
             echo "<pre>";
             print_r( $_POST );
             echo "</pre>";
+            unset( $_POST['submit'] );
+            foreach( $_POST as $key => $value ) {
+                $value = filter_var( $value , FILTER_UNSAFE_RAW );
+                write_setting( $key , $value );
+            }
+            echo "<div class='alert alert-success'>Settings saved!</div>";
         }
         ?>
     </div>
