@@ -94,7 +94,7 @@
                             echo "<td>" . date( "Y-m-d H:i:s" , strtotime( $row['stamp'] ) ) . "</td>";
                             echo "<td>" . $row['device'] . "</td>";
                             echo "<td>" . $row['mode'] . "</td>";
-                            echo "<td>" . $row['entry'] . "</td>";
+                            echo "<td>" . $row['entryLog'] . "</td>";
                             echo "</tr>";
                         }
                         ?>
