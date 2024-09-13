@@ -10,8 +10,6 @@
             echo "<pre>";
             print_r( $_POST );
             echo "</pre>";
-        } else {
-            echo "&nbsp;";
         }
         ?>
     </div>
@@ -23,7 +21,7 @@
             <table width="100%">
                 <tr>
                     <td>&nbsp;</td>
-                    <td width="1"><button type="submit" class="btn btn-success">Submit</button></td>
+                    <td width="1"><button type="submit" name="submit" class="btn btn-success">Save</button></td>
                 </tr>
             </table>
             <h2>Site info:</h2>
