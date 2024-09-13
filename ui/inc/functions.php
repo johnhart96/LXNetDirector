@@ -1,5 +1,10 @@
 <?php
 define( "CONFIG_PATH" , "/usr/local/lx_network/shares/config/LXNetDirector.db" );
+// Create db if do not exist
+if( ! file_exists( CONFIG_PATH ) ) {
+    $create = new SQLite3( CONFIG_PATH );
+}
+
 function base( $l = NULL ) {
     return "http://" . $_SERVER['SERVER_NAME'] . "/" . $l;
 }
@@ -15,7 +20,7 @@ function menu_item( $link , $text ) {
 }
 function config_init() {
     try {
-        $db = new PDO( "sqlite:/usr/local/lx_network/shares/configs/LXNetDirector.db" );
+        $db = new PDO( "sqlite:" . CONFIG_PATH );
     } catch( PDOException $e ) {
         die( $e->getMessage() );
     }
@@ -57,8 +62,5 @@ function write_setting( $setting , $value ) {
     }
     $write->execute( [ ':setting' => $setting , ':setting_value' => $value ] );
 }
-// Create db if do not exist
-if( ! file_exists( CONFIG_PATH ) ) {
-    $create = new SQLite3( CONFIG_PATH );
-}
+
 ?>
