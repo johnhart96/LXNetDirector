@@ -26,10 +26,7 @@ watchdog( "User `" . user() . "` requested " . $_SERVER['REQUEST_URI'] , "access
             } else {
                 $location = filter_var( $_GET['url'] , FILTER_UNSAFE_RAW );
             }
-            echo "Going to require " . $location . ".php";
-            echo "<pre>";
-            print_r( $_SERVER );
-            echo "</pre>";
+            require $location . ".php";
             ?>
         </div>
     </body>
