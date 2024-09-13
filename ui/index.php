@@ -7,6 +7,7 @@
 * Repo: https://github.com/johnhart96/LXNetDirector
 */
 require_once 'inc/functions.php';
+$db = config_init();
 ?>
 <html>
     <head>
