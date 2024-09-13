@@ -5,7 +5,7 @@
 </div>
 <div class="row">
     <div class="col">
-        <table>
+        <table width="100%">
             <tr>
                 <td>&nbsp;</td>
                 <td width="1"><button type="submit" class="btn btn-success">Submit</button></td>
