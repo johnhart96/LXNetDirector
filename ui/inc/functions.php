@@ -22,8 +22,8 @@ function config_init() {
 }
 function watchdog( $entry , $device = "LXNetDirector" , $mode = "info" ) {
     $db = config_init();
-    $db->prepare( "INSERT INTO logs (device,mode,entryLog) VALUES(:device,:mode,:entryLog)" );
-    $db->execute( [ ':device' => $device , ':mode' => $mode , ':entryLog' => $entry ] );
+    $watchdog = $db->prepare( "INSERT INTO logs (device,mode,entryLog) VALUES(:device,:mode,:entryLog)" );
+    $watchdog->execute( [ ':device' => $device , ':mode' => $mode , ':entryLog' => $entry ] );
     $db->close();
 }
 function user() {
