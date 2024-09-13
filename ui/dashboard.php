@@ -44,22 +44,26 @@
         <div class="card">
             <div class="card-header"><strong>Installer info:</strong></div>
             <div class="card-body">
-                <tr>
-                    <th width="25%">Installer name:</th>
-                    <td><?php echo read_setting( "installer_name" ); ?></td>
-                </tr>
-                <tr>
-                    <th width="25%">Project no:</th>
-                    <td><?php echo read_setting( "installer_project" ); ?></td>
-                </tr>
-                <tr>
-                    <th width="25%">Contact telephone:</th>
-                    <td><?php echo read_setting( "installer_telephone" ); ?></td>
-                </tr>
-                <tr>
-                    <th width="25%">Contact email:</th>
-                    <td><?php echo read_setting( "installer_email" ); ?></td>
-                </tr>
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <th width="25%">Installer name:</th>
+                            <td><?php echo read_setting( "installer_name" ); ?></td>
+                        </tr>
+                        <tr>
+                            <th width="25%">Project no:</th>
+                            <td><?php echo read_setting( "installer_project" ); ?></td>
+                        </tr>
+                        <tr>
+                            <th width="25%">Contact telephone:</th>
+                            <td><?php echo read_setting( "installer_telephone" ); ?></td>
+                        </tr>
+                        <tr>
+                            <th width="25%">Contact email:</th>
+                            <td><?php echo read_setting( "installer_email" ); ?></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
