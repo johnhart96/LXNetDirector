@@ -13,7 +13,11 @@ function menu_item( $link , $text ) {
     echo '<li class="nav-item"><a class="nav-link ' . $active . '" aria-current="page" href="/' . $link . '">' . $text . '</a></li>';
 }
 function config_init() {
-    $db = new PDO( "sqlite:/usr/local/lx_network/shares/configs/LXNetDirector.db" );
+    try {
+        $db = new PDO( "sqlite:/usr/local/lx_network/shares/configs/LXNetDirector.db" );
+    } catch( PDOException $e ) {
+        die( $e->getMessage() );
+    }
     return $db;
 }
 ?>
