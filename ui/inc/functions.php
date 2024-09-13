@@ -12,8 +12,8 @@ function menu_item( $link , $text ) {
     }
     echo '<li class="nav-item"><a class="nav-link ' . $active . '" aria-current="page" href="/' . $link . '">' . $text . '</a></li>';
 }
-function config_init( $path = "/usr/local/lx_network/shares/configs/LXNetDirector.db" ) {
-    $db = new PDO( "sqlite:" . $path );
+function config_init() {
+    $db = new PDO( "sqlite:/usr/local/lx_network/shares/configs/LXNetDirector.db" );
     return $db;
 }
 ?>
