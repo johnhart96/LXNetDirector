@@ -2,7 +2,7 @@
 
  apt update
  apt upgrade -y
- apt install apache2 php php-xml php-mysql libapache2-mod-authnz-pam -y
+ apt install apache2 php php-xml php-mysql libapache2-mod-authnz-pam sqlite3 -y
  sudo usermod -aG shadow www-data
 
  echo "# PAM configuration for Apache" >> /etc/pam.d/apache
