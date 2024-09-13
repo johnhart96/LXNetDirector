@@ -7,9 +7,6 @@
     <div class="col">
         <?php
         if( isset( $_POST['submit'] ) ) {
-            echo "<pre>";
-            print_r( $_POST );
-            echo "</pre>";
             unset( $_POST['submit'] );
             foreach( $_POST as $key => $value ) {
                 $value = filter_var( $value , FILTER_UNSAFE_RAW );
@@ -48,6 +45,25 @@
                 <label for="site_email">Email:</label>
                 <input name="site_email" value="<?php echo read_setting( "site_email" ); ?>" class="form-control">
             </div>
+
+            <h2>Installer info:</h2>
+            <div class="form-group">
+                <label for="installer_name">Installer name:</label>
+                <input name="installer_name" value="<?php echo read_setting( "installer_name" ); ?>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="installer_project">Project no:</label>
+                <input name="installer_project" value="<?php echo read_setting( "installer_project" ); ?>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="installer_telephone">Telephone:</label>
+                <input name="installer_telephone" value="<?php echo read_setting( "installer_telephone" ); ?>" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="installer_email">Email:</label>
+                <input name="installer_email" value="<?php echo read_setting( "installer_email" ); ?>" class="form-control">
+            </div>
+
         </form>
     </div>
 </div>
