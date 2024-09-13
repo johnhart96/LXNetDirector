@@ -19,7 +19,7 @@ watchdog( "User `" . user() . "` requested " . $_SERVER['REQUEST_URI'] , "access
     </head>
     <body>
         <?php require 'inc/menu.php'; ?>
-        <div class="content-fluid">
+        <div class="content">
             <?php
             if( empty( $_GET['url'] ) ) {
                 $location = "dashboard";
