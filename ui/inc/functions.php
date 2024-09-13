@@ -20,7 +20,7 @@ function config_init() {
     }
     return $db;
 }
-function watchdog( $entry , $device = "LXNetDirector" , $mode = "info" ) {
+function watchdog( $entry , $mode = "info" , $device = "LXNetDirector" ) {
     $db = config_init();
     $watchdog = $db->prepare( "INSERT INTO logs (device,mode,entryLog) VALUES(:device,:mode,:entryLog)" );
     $watchdog->execute( [ ':device' => $device , ':mode' => $mode , ':entryLog' => $entry ] );
