@@ -5,11 +5,25 @@
 </div>
 <div class="row">
     <div class="col">
-        <h2>Health</h2>
-        <?php
-        $memory = shell_exec( "free -h" );
-        $memory = str_replace( "total used free shared buff/cache available " , "" , $memory );
-        echo $memory;
-        ?>
+        <p>&nbsp;</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm">
+        <div class="card">
+            <div class="card-head"><strong>Site info:</strong></div>
+            <div class="card-body">
+                sdfsdf
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="card">
+            <div class="card-head"><strong>Site info:</strong></div>
+            <div class="card-body">
+                sdfsdf
+            </div>
+        </div>
     </div>
 </div>
