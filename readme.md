@@ -13,3 +13,6 @@
  a2enmod rewrite
  a2enmod authnz_pam
  systemctl restart apache2
+ 
+ cd /var/www/ui
+ composer install
