@@ -3,8 +3,12 @@
         <h1>Shares</h1>
     </div>
 </div>
+
 <div class="row">
     <div class="col">
+        <div class="btn-group">
+            <a class="btn btn-success"  href="/shares_new">New Share</a>
+        </div>
         <?php
         if( isset( $_POST['submit'] ) ) {
             
@@ -13,6 +17,9 @@
         ?>
     </div>
 </div>
+
+<div class="row">&nbsp;</div>
+
 <div class="row">
     <div class="col">
         <table class="table table-bordered table-striped">
@@ -27,12 +34,23 @@
             <tbody>
                 <?php
                 $getShares = $db->query( "SELECT * FROM shares" );
-                while( $share->fetch( PDO::FETCH_ASSOC ) ) {
+                while( $share = $getShares->fetch( PDO::FETCH_ASSOC ) ) {
                     echo "<tr>";
-                    echo "<td>" . $share['share_name'] . "</td>";
+                    echo "<td><a href='/shares_edit/" . $share['id'] . "'>" . $share['share_name'] . "</a></td>";
                     echo "<td>" . $share['writable'] . "</td>";
                     echo "<td>" . $share['guests'] . "</td>";
                     echo "<td><em>/usr/local/lx_network/shares/" . $share['path'] . "</em></td>";
+                    echo "
+                        <script>
+                        $.ajax({
+                            url: 'inc/delete_share.php', type: 'get',
+                            data: { 'id': " . $share['id'] . "},
+                            success: function(response) {
+                                console.log('Deleted');
+                            }
+                        });
+                        </script>
+                    ";
                     echo "</tr>";
                 } 
                 ?>

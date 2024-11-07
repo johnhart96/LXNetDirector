@@ -16,3 +16,5 @@
  
  cd /var/www/ui
  composer install
+
+ echo "include  = /etc/samba/shares.conf" >> /etc/samba/smb.conf
