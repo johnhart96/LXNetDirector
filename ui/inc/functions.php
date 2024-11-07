@@ -1,29 +1,12 @@
 <?php
-define( "CONFIG_PATH" , "../usr/LXNetDirector.db" );
-// Create db if do not exist
-if( ! file_exists( "../usr" ) ) {
-    mkdir( "../usr" );
-}
+define( "CONFIG_PATH" , "../usr/config.php" );
+
 if( ! file_exists( CONFIG_PATH ) ) {
-    $create = new SQLite3( CONFIG_PATH );
-    $create->query("
-        PRAGMA foreign_keys = off;
-        BEGIN TRANSACTION;
-
-        -- Table: logs
-        CREATE TABLE IF NOT EXISTS logs (id INTEGER PRIMARY KEY AUTOINCREMENT, stamp DATETIME CURRENT_TIMESTAMP, device TEXT NOT NULL, mode TEXT NOT NULL, entryLog TEXT NOT NULL);
-
-        -- Table: settings
-        CREATE TABLE IF NOT EXISTS settings (id INTEGER PRIMARY KEY AUTOINCREMENT, setting TEXT NOT NULL, setting_value TEXT NOT NULL);
-
-        -- Table: shares
-        CREATE TABLE IF NOT EXISTS shares (id INTEGER PRIMARY KEY AUTOINCREMENT, share_name TEXT NOT NULL, writable TEXT DEFAULT 'yes', guests TEXT DEFAULT 'yes', path TEXT NOT NULL);
-
-        COMMIT TRANSACTION;
-        PRAGMA foreign_keys = on;
-
-    ");
+    die( "Error: No config file was found!" );
+} else {
+    require_once CONFIG_PATH;
 }
+
 
 function base( $l = NULL ) {
     return "http://" . $_SERVER['SERVER_NAME'] . "/" . $l;
@@ -40,7 +23,7 @@ function menu_item( $link , $text ) {
 }
 function config_init() {
     try {
-        $db = new PDO( "sqlite:" . CONFIG_PATH );
+        $db = new PDO( "mysql:host=" . MYSQL_HOST . ";port=" . MYSQL_PORT . ";dbname=" . MYSQL_DB , MYSQL_USER , MYSQL_PASSWORD );
     } catch( PDOException $e ) {
         die( $e->getMessage() );
     }
@@ -52,7 +35,11 @@ function watchdog( $entry , $mode = "info" , $device = "LXNetDirector" ) {
     $watchdog->execute( [ ':device' => $device , ':mode' => $mode , ':entryLog' => $entry ] );
 }
 function user() {
-    return $_SERVER['PHP_AUTH_USER'];
+    if( empty( $_SERVER['PHP_AUTH_USER'] ) ) {
+        return "Unknown user";
+    } else {
+        return $_SERVER['PHP_AUTH_USER'];
+    }
 }
 function read_setting( $setting ) {
     $db = config_init();

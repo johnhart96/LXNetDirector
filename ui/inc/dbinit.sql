@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS logs (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    stamp DATETIME DEFAULT NOW(),
+    device TEXT NOT NULL,
+    mode TEXT NOT NULL,
+    entryLog TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS settings (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    setting TEXT NOT NULL,
+    setting_value TEXT NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS shares (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    share_name TEXT NOT NULL,
+    writable VARCHAR(3) DEFAULT 'yes',
+    guests VARCHAR(3) DEFAULT 'yes',
+    path TEXT NOT NULL
+);
+
